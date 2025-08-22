@@ -1,0 +1,19 @@
+server:
+  port: ${SERVER_PORT:8080}
+  servlet:
+    context-path: ${CONTEXT_PATH:/api/v1}
+
+spring:
+  application:
+    name: multimedia-control-backend
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${DATABASE_URL:localhost:5432/multimedia-control?currentSchema=devices}
+    username: ${DATABASE_LOGIN:postgres}
+    password: ${DATABASE_PASSWORD:postgres}
+  jpa:
+#    hibernate:
+#      ddl-auto: validate
+    open-in-view: false
+#cors:
+#  allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:3000, https://netimob.com}

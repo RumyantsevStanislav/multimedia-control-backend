@@ -13,13 +13,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-@Controller
+@RestController
 @RequiredArgsConstructor
 @RequestMapping("/devices")
 public class DevicesController {
 
     private final DevicesService devicesService;
-
 
     @GetMapping
     public List<DeviceDto> findAll() {

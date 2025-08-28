@@ -1,3 +1,6 @@
 INSERT INTO device_type ("name", connection_type_id)
-VALUES ('Onkyo', 1),
-       ('Dune', 2);
+VALUES ('ONKYO', 1),
+       ('RUSSOUND', 1),
+       ('GlobalCashIR', 1),
+       ('GlobalCashRS', 1),
+       ('DUNE', 2);

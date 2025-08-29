@@ -1,9 +1,10 @@
 package ru.rumyantsev.multimedia.control.backend.mappers;
 
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
-import ru.rumyantsev.multimedia.control.backend.dtos.DeviceDto;
-import ru.rumyantsev.multimedia.control.backend.entities.Device;
+import ru.rumyantsev.multimedia.control.backend.dtos.DeviceTypeDto;
+import ru.rumyantsev.multimedia.control.backend.entities.DeviceType;
 
 import java.util.List;
 
@@ -11,7 +12,8 @@ import java.util.List;
 public interface DeviceMapper {
     DeviceMapper DEVICE_MAPPER = Mappers.getMapper(DeviceMapper.class);
 
-    DeviceDto toDto(Device source);
+    @Mapping(target = "connectionTypeName", source = "connectionType.name")
+    DeviceTypeDto toDto(DeviceType source);
 
-    List<DeviceDto> toDtoList(List<Device> source);
+    List<DeviceTypeDto> toDtoList(List<DeviceType> source);
 }

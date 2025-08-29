@@ -2,10 +2,10 @@ package ru.rumyantsev.multimedia.control.backend.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import ru.rumyantsev.multimedia.control.backend.entities.Device;
+import ru.rumyantsev.multimedia.control.backend.entities.DeviceType;
 
 import java.util.UUID;
 
 @Repository
-public interface DevicesRepository extends JpaRepository<Device, UUID> {
+public interface DevicesTypeRepository extends JpaRepository<DeviceType, UUID> {
 }

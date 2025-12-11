@@ -16,11 +16,7 @@ public class CommandsService {
 
     private final CommandsRepository commandsRepository;
 
-    public List<CommandDto> getAll() {
-        return DEVICE_COMMAND_MAPPER.toDtoList(commandsRepository.findAll());
-    }
-
-    public List<CommandDto> getAllByDeviceTypeId(UUID id) {
-        return DEVICE_COMMAND_MAPPER.toDtoList(commandsRepository.findAllByDeviceType_Id(id));
+    public List<CommandDto> getAllByBrand(String brand) {
+        return DEVICE_COMMAND_MAPPER.toDtoList(commandsRepository.findAllByBrand(brand));
     }
 }

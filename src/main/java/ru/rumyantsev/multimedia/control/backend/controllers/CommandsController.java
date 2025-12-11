@@ -1,15 +1,15 @@
 package ru.rumyantsev.multimedia.control.backend.controllers;
 
-import lombok.RequiredArgsConstructor;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import lombok.RequiredArgsConstructor;
 import ru.rumyantsev.multimedia.control.backend.dtos.CommandDto;
 import ru.rumyantsev.multimedia.control.backend.services.CommandsService;
-
-import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
@@ -18,8 +18,10 @@ public class CommandsController {
 
     private final CommandsService commandsService;
 
-    @GetMapping(value = "/device/{id}")
-    public List<CommandDto> findByDeviceId(@PathVariable UUID id) {
-        return commandsService.getAllByDeviceTypeId(id);
+    @GetMapping
+    public List<CommandDto> findByBrand (
+            @RequestParam(required = false) String brand
+    ) {
+        return commandsService.getAllByBrand(brand);
     }
 }

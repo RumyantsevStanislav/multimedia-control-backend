@@ -1,7 +1,6 @@
 package ru.rumyantsev.multimedia.control.backend.entities;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,8 +8,8 @@ import lombok.Setter;
 @Setter
 @Entity
 public class Command extends AbstractEntity {
-    @OneToOne
-    private DeviceType deviceType;
+
+    private String brand;
     private String cmd;
-    private String cmdComment;
+    private String name;
 }
